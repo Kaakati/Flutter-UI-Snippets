@@ -75,3 +75,31 @@ Expanded(
   child: Text('Lorem Ipsum'),
 )
 ```
+
+### SizedBox
+Can be used as a spacer between elements.
+
+```dart
+SizedBox(height: 12.0)
+```
+
+### Textfield
+
+```dart
+TextField(
+  decoration: InputDecoration(
+    filled: true,
+    labelText: 'Username',
+  ),
+),
+// spacer
+SizedBox(height: 12.0),
+// [Password]
+TextField(
+  decoration: InputDecoration(
+    filled: true,
+    labelText: 'Password',
+  ),
+  obscureText: true,
+)
+```
