@@ -107,3 +107,62 @@ TextField(
   obscureText: true, // Secure Input?
 )
 ```
+
+### Form
+
+```dart
+enum FormType { login, register }
+
+// final formKey = new GlobalKey<FormState>();
+
+Form(
+  key: this.formKey, // Form Identifier
+  child: new Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: _buildInputs() + _buildFormActions(),
+  ),
+)
+
+List<Widget> _buildInputs() {
+  return [
+    new TextFormField(
+      decoration: new InputDecoration(labelText: 'Email'),
+      validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+      onSaved: (value) => this._email = value,
+    ),
+    new TextFormField(
+      decoration: new InputDecoration(labelText: 'Password'),
+      obscureText: true,
+      validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+      onSaved: (value) => this._password = value,
+    ),
+    new SizedBox(height: 20.0),
+  ];
+}
+
+List<Widget> _buildFormActions() {
+  if (_formType == FormType.login) {
+    return [
+      new RaisedButton(
+          child: Text('Login', style: new TextStyle(fontSize: 16)),
+          onPressed: validateAndSubmit),
+      new SizedBox(height: 20.0),
+      new FlatButton(
+          child: Text('Not Registered? Create Account.',
+              style: new TextStyle(fontSize: 14.0)),
+          onPressed: moveToRegister),
+    ];
+  } else {
+    return [
+      new RaisedButton(
+          child: Text('Create an account', style: new TextStyle(fontSize: 16)),
+          onPressed: validateAndSubmit),
+      new SizedBox(height: 20.0),
+      new FlatButton(
+          child: Text('Already Registered? Login.',
+              style: new TextStyle(fontSize: 14.0)),
+          onPressed: moveToLogin),
+    ];
+  }
+}
+```
