@@ -5,7 +5,7 @@ Snippets for Material UI in Flutter
 ```dart
 MaterialApp(
   title: 'My App',
-  home: // Scaffold,
+  home: Scaffold(... // Scaffold,
 );
 ```
 
