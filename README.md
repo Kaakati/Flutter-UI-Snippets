@@ -87,7 +87,8 @@ SizedBox(height: 12.0)
 
 ```dart
 TextField(
-  decoration: InputDecoration(
+  decoration: 
+  (
     filled: true,
     labelText: 'Username',
   ),
