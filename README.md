@@ -1,4 +1,4 @@
-# Flutter Material UI Arrangment Snippets
+# Flutter Material UI Snippets
 Snippets for Material UI in Flutter
 
 ### MaterialApp
