@@ -88,8 +88,12 @@ SizedBox(height: 12.0)
 ```dart
 TextField(
   decoration: InputDecoration(
-    filled: true,
-    labelText: 'Username',
+    fillColor: Colors.transparent, // Sets Fill Color
+    filled: false, // isFilled?
+    labelText: 'Username', // Placeholder
+    labelStyle: TextStyle(
+      color: Colors.grey // Placeholder Color
+    )
   ),
 ),
 // spacer
@@ -100,6 +104,6 @@ TextField(
     filled: true,
     labelText: 'Password',
   ),
-  obscureText: true,
+  obscureText: true, // Secure Input?
 )
 ```
